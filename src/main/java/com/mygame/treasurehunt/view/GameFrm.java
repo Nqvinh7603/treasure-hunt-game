@@ -4,6 +4,15 @@
  */
 package com.mygame.treasurehunt.view;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.border.Border;
+
 /**
  *
  * @author vinh
