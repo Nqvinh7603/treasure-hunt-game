@@ -17,7 +17,7 @@ public class Algorithm {
     //private int[][] grid;
     private final int MAX_INT = 10000000;
     private final int SRC_NODE = 0;
-    private int[][] grid = new int[GRID_SIZE][GRID_SIZE];
+    public int[][] grid = new int[GRID_SIZE][GRID_SIZE];
     public Algorithm(int n){
         initializeGrid(n);
         grid [0][0] = 0;
