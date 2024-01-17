@@ -117,8 +117,5 @@ public class Algorithm {
         
         return distance[NODES - 1];
     }
-    public static void main(String []args){
-        Algorithm algorithm = new Algorithm(5);
-        System.out.print(algorithm.findShortestPath());
-    }
+
 }

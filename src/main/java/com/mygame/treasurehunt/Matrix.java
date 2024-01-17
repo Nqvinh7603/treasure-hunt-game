@@ -8,7 +8,7 @@ package com.mygame.treasurehunt;
  *
  * @author vinh
  */
-public class Map {
+public class Matrix {
 
     private static final int SIZE = 15;
     int[][] T = new int[SIZE][SIZE];

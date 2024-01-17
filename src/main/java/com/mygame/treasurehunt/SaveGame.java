@@ -10,7 +10,7 @@ package com.mygame.treasurehunt;
  */
 public class SaveGame {
     
-    private final int[][] GONE_A = new int[15][15], GONE_B = new int[15][15], VALUE = new int[15][15];
+    public int[][] GONE_A = new int[15][15], GONE_B = new int[15][15], VALUE= new int[15][15];
 
     private int score1, score2;
     private int gameLevel;
