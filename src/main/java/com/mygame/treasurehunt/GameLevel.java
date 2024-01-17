@@ -4,75 +4,66 @@
  */
 package com.mygame.treasurehunt;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-/**
- *
- * @author vinh
- */
 public class GameLevel extends JDialog {
-
     private JComboBox<String> cb;
 
-    public GameLevel(JFrame parent) {
-        super(parent, "MỨC CHƠI", true);
+    public GameLevel() {
+        initComponents();
+    }
+
+    private void initComponents() {
         setSize(500, 300);
-        setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        JPanel p = new JPanel(new FlowLayout());
+        p.setBackground(new Color(181, 230, 29));
+        add(p);
+        setTitle("Game Level");
 
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.setBackground(new Color(181, 230, 29));
+        JLabel lbl = createLabel("Choose the level of play", 70, 0, 400, 70, Font.BOLD, 30, Color.RED);
+        p.add(lbl);
 
-        JLabel lbl = new JLabel("CHỌN MỨC ĐỘ CHƠI");
-        lbl.setHorizontalAlignment(SwingConstants.CENTER);
-        lbl.setFont(new Font("Tahoma", Font.BOLD, 30));
-        lbl.setForeground(Color.red);
-        panel.add(lbl, BorderLayout.NORTH);
+        p.add(createImageLabel("anhmucdo.PNG", 110, 125, 100, 116));
+        p.add(createImageLabel("anhmucchoi2.PNG", 195, 125, 150, 131));
 
-        String[] md = {"RẤT DỄ", "DỄ ", "TRUNG BÌNH", "KHÓ", "RẤT KHÓ"};
-        cb = new JComboBox<>(md);
+        cb = new JComboBox<>(new String[]{"VERY EASY", "EASY ", "NORMAL", "HARD", "VERY HARD"});
+        cb.setBounds(130, 67, 200, 50);
         cb.setFont(new Font("Tahoma", Font.BOLD, 20));
         cb.setForeground(Color.blue);
         cb.setBackground(Color.yellow);
-        panel.add(cb, BorderLayout.CENTER);
+        p.add(cb);
 
         JButton button = new JButton("OK");
-        button.setFont(new Font("Tahoma", Font.BOLD, 20));
+        button.setBounds(390, 200, 80, 50);
+        button.setFont(new Font("Tahoma", Font.BOLD, 30));
         button.setForeground(Color.red);
-        panel.add(button, BorderLayout.SOUTH);
+        p.add(button);
 
-        button.addActionListener(e -> {
-            setVisible(false);
-            dispose();
-        });
+        setBackground(Color.yellow);
+        setLocationRelativeTo(null);
 
-        add(panel);
-        setLocationRelativeTo(parent);
-        setResizable(false);
-        setVisible(true);
+        button.addActionListener(e -> setVisible(false));
     }
 
-    public int getMuc() {
+    private JLabel createLabel(String text, int x, int y, int width, int height, int fontStyle, int fontSize, Color color) {
+        JLabel label = new JLabel(text);
+        label.setBounds(x, y, width, height);
+        label.setFont(new Font("Tahoma", fontStyle, fontSize));
+        label.setForeground(color);
+        return label;
+    }
+
+    private JLabel createImageLabel(String imageName, int x, int y, int width, int height) {
+        JLabel label = new JLabel(new ImageIcon(getClass().getResource(imageName)));
+        label.setBounds(x, y, width, height);
+        return label;
+    }
+
+    public int get() {
         return cb.getSelectedIndex() + 1;
     }
-
-    public static void main(String[] args) {
-        JFrame frame = new JFrame();
-        JButton openDialogButton = new JButton("Open Dialog");
-        openDialogButton.addActionListener(e -> new GameLevel(frame));
-
-        frame.getContentPane().add(openDialogButton);
-        frame.setSize(300, 200);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
-    }
 }
+
