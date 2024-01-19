@@ -26,8 +26,8 @@ public class GameLevel extends JDialog {
         JLabel lbl = createLabel("Choose the level of play", 70, 0, 400, 70, Font.BOLD, 30, Color.RED);
         p.add(lbl);
 
-        p.add(createImageLabel("anhmucdo.PNG", 110, 125, 100, 116));
-        p.add(createImageLabel("anhmucchoi2.PNG", 195, 125, 150, 131));
+        p.add(createImageLabel("/img/mypicture.JPG", 110, 125, 100, 116));
+        p.add(createImageLabel("/img/mypicture.JPG", 195, 125, 150, 131));
 
         cb = new JComboBox<>(new String[]{"VERY EASY", "EASY ", "NORMAL", "HARD", "VERY HARD"});
         cb.setBounds(130, 67, 200, 50);
