@@ -39,7 +39,7 @@ public class Menu extends JFrame{
     Luu l;
     public Menu(){ 
         setIconImage(new ImageIcon(getClass().getResource("nengame.PNG")).getImage());
-        setTitle("Game tìm kho báu");
+        setTitle("Treasure Hunt Game");
         setSize(809, 580);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -47,19 +47,21 @@ public class Menu extends JFrame{
         JPanel p = new JPanel();
         p.setBounds(0, 0, 809, 580);
         
-        p.setBackground(new Color(181,230,29));
-        JLabel picLabel = new JLabel(new ImageIcon(getClass().getResource("menu.PNG")));
+        //p.setBackground(new Color(181,230,29));
+        p.setBackground(new Color(34,177,76));
+        JLabel picLabel = new JLabel(new ImageIcon(getClass().getResource("menu2.JPG")));
         picLabel.setBounds(0, 40, 809, 500);
         add(picLabel);
        
         add(p);
-        JButton btn0 = new JButton("TRANG CHỦ");
-        JButton btn1 = new JButton("CHƠI MỚI");
-        JButton btn2 = new JButton("CHƠI TIẾP");
-        JButton btn3 = new JButton("MỨC CHƠI");
-        JButton btn4 = new JButton("HƯỚNG DẪN");
-        JButton btn5 = new JButton("THÔNG TIN");
+        JButton btn0 = new JButton("HOME");
+        JButton btn1 = new JButton("NEW GAME");
+        JButton btn2 = new JButton("CONTINUE");
+        JButton btn3 = new JButton("LEVELS");
+        JButton btn4 = new JButton("INSTRUCTIONS");
+        JButton btn5 = new JButton("ABOUT");
         JButton btn6 = new JButton("TOP 10");
+
         
         btn0.setFont(new Font("Tahoma",1,13));  btn0.setForeground(Color.blue);
         btn1.setFont(new Font("Tahoma",1,13));  btn1.setForeground(Color.blue);

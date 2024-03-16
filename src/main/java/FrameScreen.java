@@ -83,8 +83,8 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable{
         nangluong2 = new JProgressBar(0,diemtoiuu+600-20*thamso_n);
         
         
-        JButton btnSolve = new JButton("XEM LỜI GIẢI");
-        JButton btnTrove = new JButton("THOÁT VÀ LƯU");
+        JButton btnSolve = new JButton("VIEW SOLUTION");
+        JButton btnTrove = new JButton("EXIT AND SAVE");
         
          
        
@@ -160,10 +160,12 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable{
             }
         }
         
-        game.setBounds(20, 85, 560, 560);
+        //game.setBounds(20, 85, 560, 560);
+        game.setBounds(0, 85, 560, 560);
         add(game);
         
-        game2.setBounds(780, 85, 560, 560);
+        //game2.setBounds(780, 85, 560, 560);
+        game2.setBounds(720, 85, 560, 560);
         add(game2);
        
         JLabel lbl = new JLabel();
@@ -213,7 +215,7 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable{
         
         
        Footer nen = new Footer();
-       nen.setBackground(Color.GREEN);
+       nen.setBackground(Color.WHITE);
        add(nen);
        
        
