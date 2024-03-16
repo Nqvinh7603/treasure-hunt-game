@@ -8,18 +8,13 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.event.ActionListener;
 
-
 /**
  *
  * @author Vinh
  */
-public class Header extends JPanel{
-    
-    
-    public Header(){
-        setBackground(Color.blue);
-}
-    
-    
-   
+public class Header extends JPanel {
+
+    public Header() {
+        setBackground(Color.cyan);
+    }
 }

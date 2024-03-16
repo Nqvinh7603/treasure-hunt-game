@@ -76,15 +76,15 @@ public class Game extends JPanel{
                 } else
                 if(gt.a[i][j] == 70)
                 {   A[i][j].setText("");
-                    A[i][j].setIcon(new ImageIcon(getClass().getResource("ran.PNG")));
+                    A[i][j].setIcon(new ImageIcon(getClass().getResource("khunglong.PNG")));
                 } else
                 if(gt.a[i][j] == 50)
                 {   A[i][j].setText(""); 
-                    A[i][j].setIcon(new ImageIcon(getClass().getResource("ret.PNG")));
+                    A[i][j].setIcon(new ImageIcon(getClass().getResource("ho.PNG")));
                 } else
                 if(gt.a[i][j] == 30)
                 {   A[i][j].setText(""); 
-                    A[i][j].setIcon(new ImageIcon(getClass().getResource("bocap.PNG")));
+                    A[i][j].setIcon(new ImageIcon(getClass().getResource("chosoi.PNG")));
                 } 
     }
         A[0][0].setIcon(new ImageIcon(getClass().getResource("nha.PNG")));

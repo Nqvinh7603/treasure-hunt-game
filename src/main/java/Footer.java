@@ -18,7 +18,7 @@ public class Footer extends JPanel{
     public Footer(){
         setBackground(Color.BLUE);
         JLabel diem = new JLabel();
-        diem.setText("Năng lượng: ");
+        diem.setText("Energy: ");
         //add(diem);
         
         JProgressBar nangluong = new JProgressBar(0,2000);
