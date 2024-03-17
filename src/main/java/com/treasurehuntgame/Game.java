@@ -1,6 +1,5 @@
 package com.treasurehuntgame;
 
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -18,81 +17,112 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
-
 /**
  *
  * @author Vinh
  */
-public class Game extends JPanel{
+public class Game extends JPanel {
+
     public GiaiThuat gt;
-    JLabel [][] A = new JLabel[15][15];
-    
-    public Game(GiaiThuat thamso){
-       gt = thamso;
+    JLabel[][] A = new JLabel[15][15];
+
+    public Game(GiaiThuat thamso) {
+        gt = thamso;
     }
 
     public Game(Game d) {
         gt = new GiaiThuat(0);
-        for(int i=0;i<15;i++)
-            for(int j=0;j<15;j++){
+        for (int i = 0; i < 15; i++) {
+            for (int j = 0; j < 15; j++) {
                 gt.a[i][j] = d.gt.a[i][j];
-                
+
             }
-    taoBang();
+        }
+        taoBang();
     }
-    
-    
-    
-    
-    public void thuchien(int x, int y){
-        A[x][y].setBackground(new Color(221,160,221));
+
+    public void thuchien(int x, int y) {
+        A[x][y].setBackground(new Color(221, 160, 221));
     }
-    
-    public void thuchienlai(int x, int y){
+
+    public void thuchienlai(int x, int y) {
         A[x][y].setBackground(Color.YELLOW);
     }
-    
-    public void thuchienthang(int x, int y){
-        A[x][y].setBackground(new Color(181,230,29));
+
+    public void thuchienthang(int x, int y) {
+        A[x][y].setBackground(new Color(181, 230, 29));
     }
-    
-    public void thuchienthua(int x, int y){
-        A[x][y].setBackground(new Color(252,66,3));
+
+    public void thuchienthua(int x, int y) {
+        A[x][y].setBackground(new Color(252, 66, 3));
     }
-    
-    public void taoBang(){
-        Border border = BorderFactory.createLineBorder(Color.BLUE, 1);
+
+//    public void taoBang(){
+//        Border border = BorderFactory.createLineBorder(Color.GREEN, 1);
+//        setLayout(new GridLayout(15, 15));
+//        for(int i=0;i<15;i++)
+//            for(int j=0;j<15;j++){
+//                A[i][j] = new JLabel();
+//                A[i][j].setFont(new Font("Tahoma",1,14));
+//                A[i][j].setHorizontalAlignment(JTextField.CENTER);
+//                A[i][j].setText(gt.a[i][j]+"");
+//                A[i][j].setBorder(border);
+//                A[i][j].setOpaque(true);
+//                add(A[i][j]);
+//                if(gt.a[i][j] == 1000000)
+//                {   A[i][j].setText(""); 
+//                    A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/boom.PNG")));
+//                } else
+//                if(gt.a[i][j] == 70)
+//                {   A[i][j].setText("");
+//                    A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/khunglong.PNG")));
+//                } else
+//                if(gt.a[i][j] == 50)
+//                {   A[i][j].setText(""); 
+//                    A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/ho.PNG")));
+//                } else
+//                if(gt.a[i][j] == 30)
+//                {   A[i][j].setText(""); 
+//                    A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/chosoi.PNG")));
+//                } 
+//    }
+    public void taoBang() {
         setLayout(new GridLayout(15, 15));
-        for(int i=0;i<15;i++)
-            for(int j=0;j<15;j++){
+        for (int i = 0; i < 15; i++) {
+            for (int j = 0; j < 15; j++) {
                 A[i][j] = new JLabel();
-                A[i][j].setFont(new Font("Tahoma",1,14));
-                A[i][j].setHorizontalAlignment(JTextField.CENTER);
-                A[i][j].setText(gt.a[i][j]+"");
-                A[i][j].setBorder(border);
+                A[i][j].setFont(new Font("Tahoma", Font.BOLD, 16));
+                A[i][j].setHorizontalAlignment(JLabel.CENTER);
                 A[i][j].setOpaque(true);
-                add(A[i][j]);
-                if(gt.a[i][j] == 1000000)
-                {   A[i][j].setText(""); 
+
+                if (gt.a[i][j] == 1000000) {
                     A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/boom.PNG")));
-                } else
-                if(gt.a[i][j] == 70)
-                {   A[i][j].setText("");
+                } else if (gt.a[i][j] == 70) {
                     A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/khunglong.PNG")));
-                } else
-                if(gt.a[i][j] == 50)
-                {   A[i][j].setText(""); 
+                } else if (gt.a[i][j] == 50) {
                     A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/ho.PNG")));
-                } else
-                if(gt.a[i][j] == 30)
-                {   A[i][j].setText(""); 
+                } else if (gt.a[i][j] == 30) {
                     A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/chosoi.PNG")));
-                } 
-    }
+                } else {
+                    A[i][j].setText(String.valueOf(gt.a[i][j]));
+                }
+
+                // Thiết lập màu nền và đường viền cho các ô
+                if (gt.a[i][j] == 1000000) {
+                    A[i][j].setBackground(new Color(255, 51, 51)); // Màu đỏ sáng tượng trưng cho bom
+                } else {
+                    A[i][j].setBackground(new Color(204, 204, 204)); // Màu xám nhạt tượng trưng cho các ô bình thường
+                }
+                A[i][j].setBorder(BorderFactory.createLineBorder(new Color(0, 128, 0), 1)); // Màu xanh lá cây cho đường viền
+
+                add(A[i][j]);
+            }
+        }
+
         A[0][0].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/nha.PNG")));
         A[14][14].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/khobau.PNG")));
         A[0][0].setText("");
         A[14][14].setText("");
-        
+
     }
 }

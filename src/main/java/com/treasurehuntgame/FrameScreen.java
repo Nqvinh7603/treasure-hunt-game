@@ -1,6 +1,5 @@
 package com.treasurehuntgame;
 
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -159,11 +158,11 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable {
             }
         }
 
-        //game.setBounds(20, 85, 560, 560);
+        
         game.setBounds(0, 85, 560, 560);
         add(game);
 
-        //game2.setBounds(780, 85, 560, 560);
+        
         game2.setBounds(720, 85, 560, 560);
         add(game2);
 
@@ -183,32 +182,35 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable {
         } else {
             lblMucChoi.setText("LEVEL: VERY HARD");
         }
+        lblMucChoi.setFont(new Font("Tahoma", Font.BOLD, 14));
+
         JLabel lblNangLuong = new JLabel();
-        if (thamso_n == 5) {
-            lblNangLuong.setText("YOUR ENERGY:  " + diem1);
-        } else if (thamso_n == 10) {
-            lblNangLuong.setText("YOUR ENERGY: " + diem1);
-        } else if (thamso_n == 15) {
-            lblNangLuong.setText("YOUR ENERGY: " + diem1);
-        } else if (thamso_n == 20) {
-            lblNangLuong.setText("YOUR ENERGY: " + diem1);
-        } else {
-            lblNangLuong.setText("Your Energy: " + diem1);
-        }
-        lblNangLuong.setFont(new Font("Tahoma", 1, 14));
-        lblMucChoi.setFont(new Font("Tahoma", 1, 14));
-        btnTrove.setFont(new Font("Tahoma", 1, 13));
-        btnSolve.setFont(new Font("Tahoma", 1, 13));
-        lblMucChoi.setForeground(Color.white);
+        lblNangLuong.setText("YOUR ENERGY: " + diem1);
+        lblNangLuong.setFont(new Font("Tahoma", Font.BOLD, 14));
+
+        JLabel lblDiem = new JLabel();
+        lblDiem.setText("BEST ENERGY: " + diemtoiuu);
+        lblDiem.setFont(new Font("Tahoma", Font.BOLD, 14));
+
+// Thiết lập màu chữ và vị trí của các nhãn
+        Color textColor = Color.YELLOW; // Màu chữ
+        lblMucChoi.setForeground(textColor);
+        lblNangLuong.setForeground(textColor);
+        lblDiem.setForeground(textColor);
+
+// Thiết lập vị trí của các nhãn
         lblMucChoi.setBounds(565, 100, 150, 50);
-        add(lblMucChoi);
-        lblNangLuong.setForeground(Color.white);
         lblNangLuong.setBounds(565, 180, 150, 50);
+        lblDiem.setBounds(565, 260, 150, 50);
+
+// Thêm các nhãn vào giao diện
+        add(lblMucChoi);
         add(lblNangLuong);
-        
-        btnSolve.setBounds(565, 500, 150, 50);
+        add(lblDiem);
+
+        btnSolve.setBounds(565, 360, 150, 50);
         add(btnSolve);
-        btnTrove.setBounds(565, 570, 150, 50);
+        btnTrove.setBounds(565, 440, 150, 50);
         add(btnTrove);
 
         //Footer footer1 = new Footer();
@@ -264,17 +266,11 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable {
 
             }
         });
-        
+
         /*header.add(lblMucChoi);
         header.add(btnTrove);
         header.add(btnSolve);*/
-
-        JLabel lblDiem = new JLabel();
-        lblDiem.setForeground(Color.white);
-        lblDiem.setFont(new Font("Tahoma", 1, 18));
-        lblDiem.setText("       Optimal Energy: " + diemtoiuu);
-
-        /*header.add(lblDiem);*/
+ /*header.add(lblDiem);*/
         btnSolve.setForeground(Color.red);
         btnTrove.setForeground(Color.red);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
