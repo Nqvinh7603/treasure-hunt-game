@@ -67,7 +67,7 @@ public class TenThang extends JDialog {
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                String s = "top10_" + mucchoi + ".txt";
+                String s = "src/main/java/com/treasurehuntgame/data_top10/top10_" + mucchoi + ".txt";
                 String[] ten = new String[12];
                 int[] Diem = new int[12];
 

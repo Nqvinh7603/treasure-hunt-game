@@ -57,7 +57,7 @@ public class Top10 extends JDialog{
         cb.setForeground(Color.blue);
         cb.setBackground(Color.yellow);
         p.add(cb);
-        s="top10_1.txt";
+        s="src/main/java/com/treasurehuntgame/data_top10/top10_1.txt";
         
         String[] ten = new String[11];
         String[] diem = new String[11];
@@ -92,7 +92,7 @@ public class Top10 extends JDialog{
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             
         int cbx = cb.getSelectedIndex()+1;
-        s="top10_"+cbx+".txt";
+        s="src/main/java/com/treasurehuntgame/data_top10/top10_"+cbx+".txt";
          try {
              FileReader fr = new FileReader(s);
              BufferedReader br = new BufferedReader(fr);
