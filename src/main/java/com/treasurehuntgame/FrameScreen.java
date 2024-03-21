@@ -273,6 +273,12 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable {
  /*header.add(lblDiem);*/
         btnSolve.setForeground(Color.red);
         btnTrove.setForeground(Color.red);
+        
+        
+        JLabel lbl = new JLabel();
+        //lbl.setBounds(560, 120, 195, 467);
+        lbl.setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/huongdan.PNG")));
+        header.add(lbl);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
 
     }
