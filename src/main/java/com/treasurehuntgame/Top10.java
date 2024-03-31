@@ -8,132 +8,109 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Vinh
- */
-public class Top10 extends JDialog{
-    private JComboBox cb;
-    String s,ss="  ";
+public class Top10 extends JDialog {
+    private JComboBox<String> cb;
+    String s;
     JLabel[] top = new JLabel[11];
+
     public Top10() {
         setSize(500, 550);
         setTitle("TOP 10");
         JPanel p = new JPanel();
         p.setLayout(null);
         p.setBounds(0, 0, 500, 550);
-        p.setBackground(new Color(181,230,29));
+        p.setBackground(new Color(34, 177, 76));
         add(p);
-        
+
         setLayout(null);
-        String md[] = { "VERY EASY", "EASY ", "MEDIUM", 
-                "HARD", "VERY HARD" };
-        JLabel lbl = new JLabel("CHOOSE THE DIFFICULTY LEVEL");
-        JLabel lbl2 = new JLabel();
-        lbl2.setBounds(10, 75, 100, 116);
-        lbl2.setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/anhmucdo.PNG")));
-        p.add(lbl2);
-        
-        JLabel lbl3 = new JLabel();
-        lbl3.setBounds(325, 50, 150, 148);
-        lbl3.setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/anhtop10.PNG")));
-        p.add(lbl3);
-        
+        String[] md = {"VERY EASY", "EASY", "MEDIUM", "HARD", "VERY HARD"};
+        JLabel lbl = new JLabel("CHOOSE LEVEL");
         lbl.setBounds(70, 0, 400, 70);
-        lbl.setFont(new Font("Tahama",1,30));
-        lbl.setForeground(Color.red);
+        lbl.setFont(new Font("Tahoma", Font.BOLD, 30));
+        lbl.setForeground(Color.RED);
         p.add(lbl);
-        
-        cb = new JComboBox(md);
+
+        cb = new JComboBox<>(md);
         cb.setBounds(140, 67, 180, 50);
-        cb.setFont(new Font("Tahama",1,20));
-        cb.setForeground(Color.blue);
-        cb.setBackground(Color.yellow);
+        cb.setFont(new Font("Tahoma", Font.BOLD, 20));
+        cb.setForeground(Color.BLUE);
+        cb.setBackground(new Color(255, 255, 153)); // Chỉnh màu nền của JComboBox
         p.add(cb);
-        s="src/main/java/com/treasurehuntgame/data_top10/top10_1.txt";
-        
+        s = "src/main/java/com/treasurehuntgame/data_top10/top10_1.txt";
+
         String[] ten = new String[11];
         String[] diem = new String[11];
-        
-         try {
-             FileReader fr = new FileReader(s);
-             BufferedReader br = new BufferedReader(fr);
-             String line ="";
-             int i=0;
-             while (++i<=10) {
-                 line = br.readLine();
-                 ten[i]=new String(line);
-                 line = br.readLine();
-                 diem[i]=new String(line);
-             }
+
+        try {
+            FileReader fr = new FileReader(s);
+            BufferedReader br = new BufferedReader(fr);
+            String line = "";
+            int i = 0;
+            while (++i <= 10) {
+                line = br.readLine();
+                ten[i] = new String(line);
+                line = br.readLine();
+                diem[i] = new String(line);
+            }
             br.close();
             fr.close();
-        } catch (Exception ex) {} 
-         for(int i=1;i<=10;i++){
-           ss="Top "+i+":   "+ten[i]+"                                              "+diem[i]+"%";
-           top[i]=new JLabel(ss.substring(0, 37)+ss.substring(ss.length()-5,ss.length()));
-            top[i].setForeground(Color.red);
-            top[i].setFont(new Font("Tahama",1,20));
-            top[i].setBounds(50, 25*i+170, 400, 23);
+        } catch (Exception ex) {
+        }
+        for (int i = 1; i <= 10; i++) {
+            String ss = "Top " + i + ":   " + ten[i] + "                                              " + diem[i] + "%";
+            top[i] = new JLabel(ss.substring(0, 37) + ss.substring(ss.length() - 5, ss.length()));
+            top[i].setForeground(Color.RED);
+            top[i].setFont(new Font("Tahoma", Font.BOLD, 20));
+            top[i].setBounds(50, 25 * i + 170, 400, 23);
             p.add(top[i]);
         }
-        
-        
-         cb.addItemListener(new ItemListener() {
+
+        cb.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            
-        int cbx = cb.getSelectedIndex()+1;
-        s="src/main/java/com/treasurehuntgame/data_top10/top10_"+cbx+".txt";
-         try {
-             FileReader fr = new FileReader(s);
-             BufferedReader br = new BufferedReader(fr);
-             String line ="";
-             int i=0;
-             while (++i<=10) {
-                 line = br.readLine();
-                 ten[i]=new String(line);
-                 line = br.readLine();
-                 diem[i]=new String(line);
-             }
-            br.close();
-            fr.close();
-        } catch (Exception ex) {} 
-           for(int i=1;i<=10;i++){
-               ss="Top "+i+":   "+ten[i]+"                                               "+diem[i]+"%";
-               top[i].setText(ss.substring(0, 37)+ss.substring(ss.length()-5,ss.length()));
-        }
+                int cbx = cb.getSelectedIndex() + 1;
+                s = "src/main/java/com/treasurehuntgame/data_top10/top10_" + cbx + ".txt";
+                try {
+                    FileReader fr = new FileReader(s);
+                    BufferedReader br = new BufferedReader(fr);
+                    String line = "";
+                    int i = 0;
+                    while (++i <= 10) {
+                        line = br.readLine();
+                        ten[i] = new String(line);
+                        line = br.readLine();
+                        diem[i] = new String(line);
+                    }
+                    br.close();
+                    fr.close();
+                } catch (Exception ex) {
+                }
+                for (int i = 1; i <= 10; i++) {
+                    String ss = "Top " + i + ":   " + ten[i] + "                                               " + diem[i] + "%";
+                    top[i].setText(ss.substring(0, 37) + ss.substring(ss.length() - 5, ss.length()));
+                }
             }
-            
-          
+        });
 
-    });
-        
-        
         JButton button = new JButton("CLOSE");
         button.setBounds(330, 450, 150, 50);
-        button.setFont(new Font("Tahama",1,30));
-        button.setForeground(Color.red);
+        button.setFont(new Font("Tahoma", Font.BOLD, 30));
+        button.setForeground(Color.RED);
         p.add(button);
-      
-        
-        setBackground(Color.yellow);
+
+        setBackground(Color.YELLOW);
         setLocationRelativeTo(null);
-        
+
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
             }
-        });    
+        });
     }
-    
-    
 }
