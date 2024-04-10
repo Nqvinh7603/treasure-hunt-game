@@ -101,7 +101,7 @@ for (i = 0; i <= n; i++)
 }
 Nhan[src] = 0;
 DanhDau[src] = 0;
-
+//Dijkstra -> start
 int u;
 while (true){
     min = MAXINT; u=-1;
@@ -122,7 +122,7 @@ while (true){
             Truoc[v] = u;
         }
 }
-
+//disjkstra -> end
              
 // Truy vết đường đi và in kết quả
 

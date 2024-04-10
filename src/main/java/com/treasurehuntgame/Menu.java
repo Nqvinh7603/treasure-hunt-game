@@ -81,8 +81,8 @@ public class Menu extends JFrame {
         p.add(btn1);
         p.add(btn2);
         p.add(btn3);
-        p.add(btn4);
-        p.add(btn5);
+        //p.add(btn4);
+        //p.add(btn5);
         p.add(btn6);
 
         //======================= nut Trang chu 0  ======================   
