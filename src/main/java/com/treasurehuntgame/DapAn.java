@@ -142,7 +142,7 @@ this.count = count-1;
 //    System.out.println(temp[i] + " --> ");
 //    System.out.println(temp[0] + ": " + Nhan[des]);  
     
-        setTitle("Năng lượng tiêu thụ ít nhất: "+Nhan[des]);
+        setTitle("The least energy consumptiont: "+Nhan[des]);
     this.diem=Nhan[des];
 //for(i=0;i<225;i++)
               

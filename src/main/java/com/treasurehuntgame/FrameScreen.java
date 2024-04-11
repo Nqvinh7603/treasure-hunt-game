@@ -267,10 +267,7 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable {
             }
         });
 
-        /*header.add(lblMucChoi);
-        header.add(btnTrove);
-        header.add(btnSolve);*/
- /*header.add(lblDiem);*/
+        
         btnSolve.setForeground(Color.red);
         btnTrove.setForeground(Color.red);
         

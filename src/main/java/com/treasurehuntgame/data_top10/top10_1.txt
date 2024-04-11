@@ -1,5 +1,9 @@
+khanh
+97
 Gà
 95
+vinh
+89
 Vinh
 78
 Kkkkk
@@ -10,10 +14,6 @@ Vih
 62
 Hello
 36
-null
-0
-null
-0
 null
 0
 null

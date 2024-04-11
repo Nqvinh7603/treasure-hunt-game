@@ -239,73 +239,73 @@ public class Menu extends JFrame {
         });
 
         //======================= nut HUONG DAN  4 ======================         
-        btn4.addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-                picLabel.setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/huongdanchoi.PNG")));
-
-                /*
-               - Khi đến được kho báu, bạn sẽ thắng!
-               - Mỗi một mức chơi sẽ có bản đồ riêng.
-               - Bạn được cấp nguồn năng lượng ứng với mức chơi và bản đồ.
-               - Di chuyển theo 4 hướng: trên, dưới, phải, trái. 
-               - Không được di chuyển vào ô đã đi.
-               - Di chuyển đến ô nào sẽ bị trừ lượng trong ghi trong ô đó.
-               - Hết năng lượng hoặc không thể di chuyển, bạn sẽ thua!
-                 */
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                btn4.setForeground(Color.blue);
-                btn4.setFont(new Font("Tahoma", 1, 17));
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                btn4.setForeground(Color.black);
-                btn4.setFont(new Font("Tahoma", 1, 13));
-            }
-        });
+//        btn4.addMouseListener(new MouseListener() {
+//            @Override
+//            public void mouseClicked(MouseEvent e) {
+//
+//                picLabel.setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/huongdanchoi.PNG")));
+//
+//                /*
+//               - Khi đến được kho báu, bạn sẽ thắng!
+//               - Mỗi một mức chơi sẽ có bản đồ riêng.
+//               - Bạn được cấp nguồn năng lượng ứng với mức chơi và bản đồ.
+//               - Di chuyển theo 4 hướng: trên, dưới, phải, trái. 
+//               - Không được di chuyển vào ô đã đi.
+//               - Di chuyển đến ô nào sẽ bị trừ lượng trong ghi trong ô đó.
+//               - Hết năng lượng hoặc không thể di chuyển, bạn sẽ thua!
+//                 */
+//            }
+//
+//            @Override
+//            public void mousePressed(MouseEvent e) {
+//            }
+//
+//            @Override
+//            public void mouseReleased(MouseEvent e) {
+//            }
+//
+//            @Override
+//            public void mouseEntered(MouseEvent e) {
+//                btn4.setForeground(Color.blue);
+//                btn4.setFont(new Font("Tahoma", 1, 17));
+//            }
+//
+//            @Override
+//            public void mouseExited(MouseEvent e) {
+//                btn4.setForeground(Color.black);
+//                btn4.setFont(new Font("Tahoma", 1, 13));
+//            }
+//        });
         //======================= nut THONG TIN 5 ======================        
 
-        btn5.addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-                picLabel.setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/thongtin.PNG")));
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                btn5.setForeground(Color.blue);
-                btn5.setFont(new Font("Tahoma", 1, 17));
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                btn5.setForeground(Color.black);
-                btn5.setFont(new Font("Tahoma", 1, 13));
-            }
-        });
+//        btn5.addMouseListener(new MouseListener() {
+//            @Override
+//            public void mouseClicked(MouseEvent e) {
+//
+//                picLabel.setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/thongtin.PNG")));
+//            }
+//
+//            @Override
+//            public void mousePressed(MouseEvent e) {
+//            }
+//
+//            @Override
+//            public void mouseReleased(MouseEvent e) {
+//            }
+//
+//            @Override
+//            public void mouseEntered(MouseEvent e) {
+//                btn5.setForeground(Color.blue);
+//                btn5.setFont(new Font("Tahoma", 1, 17));
+//
+//            }
+//
+//            @Override
+//            public void mouseExited(MouseEvent e) {
+//                btn5.setForeground(Color.black);
+//                btn5.setFont(new Font("Tahoma", 1, 13));
+//            }
+//        });
 
         //====================== nút TOP 10 ========================================        
         btn6.addMouseListener(new MouseListener() {

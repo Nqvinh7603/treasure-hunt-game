@@ -15,7 +15,7 @@ import javax.swing.SwingConstants;
 
 public class MucChoi extends JDialog {
 
-    private JComboBox<String> cb;
+    private JComboBox cb;
 
     public MucChoi() {
         setSize(500, 300);
@@ -36,7 +36,7 @@ public class MucChoi extends JDialog {
         p.add(lbl);
 
         String[] md = {"VERY EASY", "EASY", "MEDIUM", "HARD", "VERY HARD"};
-        cb = new JComboBox<>(md);
+        cb = new JComboBox(md);
         cb.setBounds(150, 100, 200, 40);
         cb.setFont(new Font("Tahoma", Font.BOLD, 20));
         cb.setForeground(Color.BLUE);

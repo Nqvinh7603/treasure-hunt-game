@@ -36,12 +36,12 @@ public class TenThang extends JDialog {
         JLabel lbl = new JLabel("PLAYER " + ten + " WIN : " + diem + "%");
         JLabel lbl2 = new JLabel();
         lbl2.setBounds(110, 125, 100, 116);
-        lbl2.setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/anhmucdo.PNG")));
+        //lbl2.setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/anhmucdo.PNG")));
         p.add(lbl2);
 
         JLabel lbl3 = new JLabel();
         lbl3.setBounds(195, 125, 150, 131);
-        lbl3.setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/anhmucchoi2.PNG")));
+        //lbl3.setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/anhmucchoi2.PNG")));
         p.add(lbl3);
 
         lbl.setBounds(70, 0, 400, 70);
@@ -67,7 +67,7 @@ public class TenThang extends JDialog {
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                String s = "src/main/java/com/treasurehuntgame/data_top10/top10_" + mucchoi + ".txt";
+                String s = "src/main/resources/com/treasurehuntgame/data_top10/top10_" + mucchoi + ".txt";
                 String[] ten = new String[12];
                 int[] Diem = new int[12];
 
@@ -123,6 +123,5 @@ public class TenThang extends JDialog {
                 }
             }
         });
-
     }
 }
