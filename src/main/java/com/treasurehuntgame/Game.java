@@ -50,42 +50,14 @@ public class Game extends JPanel {
     }
 
     public void thuchienthang(int x, int y) {
-        A[x][y].setBackground(new Color(181, 230, 29));
+        A[x][y].setBackground(new Color(81, 230, 50));
+        //81, 230, 29
     }
 
     public void thuchienthua(int x, int y) {
         A[x][y].setBackground(new Color(252, 66, 3));
     }
 
-//    public void taoBang(){
-//        Border border = BorderFactory.createLineBorder(Color.GREEN, 1);
-//        setLayout(new GridLayout(15, 15));
-//        for(int i=0;i<15;i++)
-//            for(int j=0;j<15;j++){
-//                A[i][j] = new JLabel();
-//                A[i][j].setFont(new Font("Tahoma",1,14));
-//                A[i][j].setHorizontalAlignment(JTextField.CENTER);
-//                A[i][j].setText(gt.a[i][j]+"");
-//                A[i][j].setBorder(border);
-//                A[i][j].setOpaque(true);
-//                add(A[i][j]);
-//                if(gt.a[i][j] == 1000000)
-//                {   A[i][j].setText(""); 
-//                    A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/boom.PNG")));
-//                } else
-//                if(gt.a[i][j] == 70)
-//                {   A[i][j].setText("");
-//                    A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/khunglong.PNG")));
-//                } else
-//                if(gt.a[i][j] == 50)
-//                {   A[i][j].setText(""); 
-//                    A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/ho.PNG")));
-//                } else
-//                if(gt.a[i][j] == 30)
-//                {   A[i][j].setText(""); 
-//                    A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/chosoi.PNG")));
-//                } 
-//    }
     public void taoBang() {
         setLayout(new GridLayout(15, 15));
         for (int i = 0; i < 15; i++) {

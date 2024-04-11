@@ -49,10 +49,11 @@ public class Top10 extends JDialog {
         cb.setFont(new Font("Tahoma", Font.BOLD, 20));
         cb.setForeground(Color.BLUE);
         cb.setBackground(new Color(255, 255, 153)); // Chỉnh màu nền của JComboBox
+        cb.setBackground(new Color(255, 255, 204));
         p.add(cb);
         s = "src/main/java/com/treasurehuntgame/data_top10/top10_1.txt";
         //s = "top10_1.txt";
-        
+
         String[] ten = new String[11];
         String[] diem = new String[11];
 
@@ -72,14 +73,18 @@ public class Top10 extends JDialog {
         } catch (Exception ex) {
         }
         for (int i = 1; i <= 10; i++) {
-            ss = "Top " + i + ":   " + ten[i] + "                                              " + diem[i] + "%";
-            top[i] = new JLabel(ss.substring(0, 37) + ss.substring(ss.length() - 5, ss.length()));
+            // Sử dụng cố định độ dài cho phần tên
+            String fixedName = String.format("%-20s", ten[i]);
+            // Tạo chuỗi hiển thị với định dạng cố định cho mỗi dòng
+            String formattedString = String.format("Top %d:   %-20s %s%%", i, ten[i], diem[i]);
+
+            // Tạo JLabel với chuỗi đã định dạng
+            top[i] = new JLabel(formattedString);
             top[i].setForeground(Color.BLUE);
             top[i].setFont(new Font("Tahoma", Font.BOLD, 20));
             top[i].setBounds(50, 25 * i + 170, 400, 23);
             p.add(top[i]);
         }
-
         cb.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
@@ -89,6 +94,10 @@ public class Top10 extends JDialog {
                 System.out.println("cbx value: " + cbx);
                 s = "src/main/java/com/treasurehuntgame/data_top10/top10_" + cbx + ".txt";
                 System.out.println("File path: " + s); // In ra đường dẫn của tệp tin được đọc
+
+                // Khởi tạo và gán giá trị cho mảng ten và diem
+                String[] ten = new String[11];
+                String[] diem = new String[11];
 
                 try {
                     FileReader fr = new FileReader(s);
@@ -106,9 +115,19 @@ public class Top10 extends JDialog {
                 } catch (Exception ex) {
                     ex.printStackTrace(); // In ra thông tin của ngoại lệ nếu có
                 }
+                
                 for (int i = 1; i <= 10; i++) {
-                    String ss = "Top " + i + ":   " + ten[i] + "                                               " + diem[i] + "%";
-                    top[i].setText(ss.substring(0, 37) + ss.substring(ss.length() - 5, ss.length()));
+                    // Sử dụng cố định độ dài cho phần tên
+                    String fixedName = String.format("%-20s", ten[i]);
+                    // Tạo chuỗi hiển thị với định dạng cố định cho mỗi dòng
+                    // Sử dụng định dạng cố định cho mỗi dòng
+                    String topNum = (i < 10) ? "0" + i : String.valueOf(i);
+                    String formattedString = String.format("Top %s:   %-20s %4s%%", topNum, ten[i], diem[i]);
+
+
+
+                    // Cập nhật nội dung của JLabel
+                    top[i].setText(formattedString);
                 }
             }
         });
@@ -129,3 +148,4 @@ public class Top10 extends JDialog {
         });
     }
 }
+
