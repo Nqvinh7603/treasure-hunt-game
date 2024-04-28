@@ -29,15 +29,15 @@ public class DapAn extends JFrame implements Runnable{
                 {   g.A[i][j].setText(""); 
                     g.A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/boom.PNG")));
                 } else
-                if(g.gt.a[i][j] == -70)
+                if(g.gt.a[i][j] == -500)
                 {   g.A[i][j].setText("");
                     g.A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/khunglong.PNG")));
                 } else
-                if(g.gt.a[i][j] == -50)
+                if(g.gt.a[i][j] == -300)
                 {   g.A[i][j].setText(""); 
                     g.A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/ho.PNG")));
                 } else
-                if(g.gt.a[i][j] == -30)
+                if(g.gt.a[i][j] == -100)
                 {   g.A[i][j].setText(""); 
                     g.A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/chosoi.PNG")));
                 } 
