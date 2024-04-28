@@ -16,7 +16,7 @@ public class GiaiThuat {
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 15; j++) {
                 a[i][j] = -r.nextInt(50) - 1;
-                if (a[i][j] == -30 || a[i][j] == -50 && a[i][j] == -70) {
+                if (a[i][j] == -60 || a[i][j] == -100 && a[i][j] == -140) {
                     a[i][j]++;
                 }
             }
@@ -26,21 +26,21 @@ public class GiaiThuat {
             while (a[t / 15][t % 15] > 0) {
                 t = r.nextInt(223) + 1;
             }
-            a[t / 15][t % 15] = 30;
+            a[t / 15][t % 15] = 100;
         }
         for (int i = 0; i < n; i++) {
             t = r.nextInt(223) + 1;
             while (a[t / 15][t % 15] > 0) {
                 t = r.nextInt(223) + 1;
             }
-            a[t / 15][t % 15] = 50;
+            a[t / 15][t % 15] = 300;
         }
         for (int i = 0; i < n; i++) {
             t = r.nextInt(223) + 1;
             while (a[t / 15][t % 15] > 0) {
                 t = r.nextInt(223) + 1;
             }
-            a[t / 15][t % 15] = 70;
+            a[t / 15][t % 15] = 500;
         }
         for (int i = 0; i < n; i++) {
             t = r.nextInt(223) + 1;

@@ -6,6 +6,8 @@ Vinh
 71
 Hello
 70
+Vinh
+65
 No Name
 50
 vinh
@@ -14,7 +16,5 @@ Vinh
 44
 Vinh
 42
-null
-0
 null
 0

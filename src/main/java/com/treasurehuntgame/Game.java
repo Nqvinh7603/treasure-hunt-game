@@ -69,11 +69,11 @@ public class Game extends JPanel {
 
                 if (gt.a[i][j] == 1000000) {
                     A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/boom.PNG")));
-                } else if (gt.a[i][j] == 70) {
+                } else if (gt.a[i][j] == 500) {
                     A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/khunglong.PNG")));
-                } else if (gt.a[i][j] == 50) {
+                } else if (gt.a[i][j] == 300) {
                     A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/ho.PNG")));
-                } else if (gt.a[i][j] == 30) {
+                } else if (gt.a[i][j] == 100) {
                     A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/chosoi.PNG")));
                 } else {
                     A[i][j].setText(String.valueOf(gt.a[i][j]));
