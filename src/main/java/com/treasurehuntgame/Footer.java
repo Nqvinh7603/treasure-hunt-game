@@ -22,12 +22,10 @@ public class Footer extends JPanel{
         JLabel diem = new JLabel();
         diem.setText("Energy: ");
         //add(diem);
-        
         JProgressBar nangluong = new JProgressBar(0,2000);
         nangluong.setValue(500);
         nangluong.setBounds(20, 650, 560 , 50);
         add(nangluong);
-        
     }
     
 }

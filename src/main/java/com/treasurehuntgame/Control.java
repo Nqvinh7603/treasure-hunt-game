@@ -141,11 +141,8 @@ public class Control implements KeyListener {
             }
         }
     }
-
     @Override
     public void keyReleased(KeyEvent e) {
     }
-
-
 }
 

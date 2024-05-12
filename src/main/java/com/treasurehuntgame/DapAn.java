@@ -1,16 +1,11 @@
 package com.treasurehuntgame;
 
-
-import java.awt.HeadlessException;
-
 import static java.lang.Thread.sleep;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-
-
 /**
  * @author Vinh
  */
@@ -42,7 +37,6 @@ public class DapAn extends JFrame implements Runnable {
             }
         add(g);
         Thread t = new Thread(this);
-
         t.start();
         // g.thuchien(3,3);
     }

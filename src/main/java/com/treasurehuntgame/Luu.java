@@ -14,8 +14,6 @@ public class Luu implements Serializable {
     int xA, yA, xB, yB;
     boolean daThang1, daThang2, daThua1, daThua2;
     String nlA, nlB;
-
     public Luu() {
     }
-
 }

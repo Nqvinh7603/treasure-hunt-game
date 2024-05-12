@@ -123,9 +123,6 @@ public class Top10 extends JDialog {
                     // Sử dụng định dạng cố định cho mỗi dòng
                     String topNum = (i < 10) ? "0" + i : String.valueOf(i);
                     String formattedString = String.format("Top %s:   %-20s %4s%%", topNum, ten[i], diem[i]);
-
-
-
                     // Cập nhật nội dung của JLabel
                     top[i].setText(formattedString);
                 }
