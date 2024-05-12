@@ -16,7 +16,7 @@ public class GiaiThuat {
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 15; j++) {
                 a[i][j] = -r.nextInt(50) - 1;
-                if (a[i][j] == -60 || a[i][j] == -100 && a[i][j] == -140) {
+                if (a[i][j] == -100 || a[i][j] == -300 && a[i][j] == -500) {
                     a[i][j]++;
                 }
             }
