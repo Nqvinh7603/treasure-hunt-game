@@ -317,7 +317,6 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable {
     public static void main(String[] args) {
         // FrameScreen f = new FrameScreen();
         menu = new Menu();
-
     }
 
     public void thang1() {

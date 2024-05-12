@@ -133,7 +133,17 @@ public class DapAn extends JFrame implements Runnable {
         setTitle("The least energy consumptiont: " + Nhan[des]);
         this.diem = Nhan[des];
 //for(i=0;i<225;i++)
+    }
+    // Biến cờ để đánh dấu xem đã hiển thị giải pháp hay chưa
+    private boolean daHienThiGiaiPhap = false;
 
+    // Phương thức để kiểm tra xem giải pháp đã hiển thị hay chưa
+    public boolean daHienThiGiaiPhap() {
+        return daHienThiGiaiPhap;
+    }
 
+    // Cập nhật trạng thái hiển thị giải pháp
+    public void capNhatTrangThaiGiaiPhap(boolean trangThai) {
+        this.daHienThiGiaiPhap = trangThai;
     }
 }
