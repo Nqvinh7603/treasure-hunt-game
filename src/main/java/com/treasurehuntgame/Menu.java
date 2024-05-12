@@ -81,9 +81,9 @@ public class Menu extends JFrame {
         p.add(btn1);
         p.add(btn2);
         p.add(btn3);
-        p.add(btn4);
-        //p.add(btn5);
         p.add(btn6);
+        p.add(btn4);
+        p.add(btn5);
 
         //======================= nut Trang chu 0  ======================   
         btn0.addMouseListener(new MouseListener() {
@@ -278,34 +278,34 @@ public class Menu extends JFrame {
         });
         //======================= nut THONG TIN 5 ======================        
 
-//        btn5.addMouseListener(new MouseListener() {
-//            @Override
-//            public void mouseClicked(MouseEvent e) {
-//
-//                picLabel.setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/thongtin.PNG")));
-//            }
-//
-//            @Override
-//            public void mousePressed(MouseEvent e) {
-//            }
-//
-//            @Override
-//            public void mouseReleased(MouseEvent e) {
-//            }
-//
-//            @Override
-//            public void mouseEntered(MouseEvent e) {
-//                btn5.setForeground(Color.blue);
-//                btn5.setFont(new Font("Tahoma", 1, 17));
-//
-//            }
-//
-//            @Override
-//            public void mouseExited(MouseEvent e) {
-//                btn5.setForeground(Color.black);
-//                btn5.setFont(new Font("Tahoma", 1, 13));
-//            }
-//        });
+        btn5.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                picLabel.setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/thongtin.PNG")));
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                btn5.setForeground(Color.blue);
+                btn5.setFont(new Font("Tahoma", 1, 17));
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                btn5.setForeground(Color.black);
+                btn5.setFont(new Font("Tahoma", 1, 13));
+            }
+        });
 
         //====================== nút TOP 10 ========================================        
         btn6.addMouseListener(new MouseListener() {
