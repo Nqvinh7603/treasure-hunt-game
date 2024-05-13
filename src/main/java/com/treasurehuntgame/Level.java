@@ -13,11 +13,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-public class MucChoi extends JDialog {
+public class Level extends JDialog {
 
     private JComboBox cb;
 
-    public MucChoi() {
+    public Level() {
         setSize(500, 300);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);

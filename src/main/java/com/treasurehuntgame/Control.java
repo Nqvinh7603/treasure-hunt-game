@@ -6,6 +6,7 @@ import java.awt.event.KeyListener;
 
 /**
  * @author Vinh
+ * Tinh diem
  */
 public class Control implements KeyListener {
     FrameScreen f;
@@ -72,7 +73,7 @@ public class Control implements KeyListener {
             if (f.B.getX() == 14 && f.B.getY() == 14) {
                 f.thang2();
                 if (!f.daThang2) {
-                    f.thang2 = new TenThang(2, f.diem2 * 100 / f.diemtoiuu, f.mucchoi);
+                    f.thang2 = new Winner(2, f.diem2 * 100 / f.diemtoiuu, f.mucchoi);
                     f.thang2.setVisible(true);
                 }
                 f.daThang2 = true;
@@ -134,7 +135,7 @@ public class Control implements KeyListener {
             if (f.A.getX() == 14 && f.A.getY() == 14) {
                 f.thang1();
                 if (!f.daThang1) {
-                    f.thang1 = new TenThang(1, f.diem1 * 100 / f.diemtoiuu, f.mucchoi);
+                    f.thang1 = new Winner(1, f.diem1 * 100 / f.diemtoiuu, f.mucchoi);
                     f.thang1.setVisible(true);
                 }
                 f.daThang1 = true;

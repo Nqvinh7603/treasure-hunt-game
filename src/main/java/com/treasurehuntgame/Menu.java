@@ -2,28 +2,15 @@ package com.treasurehuntgame;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Paint;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -34,9 +21,9 @@ import javax.swing.JPanel;
  */
 public class Menu extends JFrame {
 
-    static MucChoi mucChoi = new MucChoi();
+    static Level level = new Level();
     Top10 top10 = new Top10();
-    Luu l;
+    Save l;
 
     public Menu() {
         setIconImage(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/nengame.PNG")).getImage());
@@ -119,7 +106,7 @@ public class Menu extends JFrame {
         btn1.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                new FrameScreen(5 * mucChoi.getMuc(), 0, l);
+                new FrameScreen(5 * level.getMuc(), 0, l);
 
                 close();
             }
@@ -162,9 +149,9 @@ public class Menu extends JFrame {
                 } catch (Exception ex) {
 
                 }
-                Luu f = null;
+                Save f = null;
                 try {
-                    f = (Luu) o.readObject();
+                    f = (Save) o.readObject();
                 } catch (IOException ex) {
 
                 } catch (ClassNotFoundException ex) {
@@ -214,7 +201,7 @@ public class Menu extends JFrame {
         btn3.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                mucChoi.setVisible(true);
+                level.setVisible(true);
             }
 
             @Override

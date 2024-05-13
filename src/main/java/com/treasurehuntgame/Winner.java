@@ -141,11 +141,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class TenThang extends JDialog {
+public class Winner extends JDialog {
 
     private JTextField cb;
 
-    public TenThang(int ten, int diem, int mucchoi) {
+    public Winner(int ten, int diem, int mucchoi) {
         setSize(500, 300);
         JPanel p = new JPanel();
         p.setLayout(null);

@@ -1,17 +1,15 @@
 package com.treasurehuntgame;
 
-import java.io.Serializable;
-
 /**
  *
  * @author Vinh
  */
-public class MaTran {
+public class Matrix {
 
     int[][] T = new int[15][15];
     int x, y;
 
-    public MaTran() {
+    public Matrix() {
         x = 0;
         y = 0;
         T[0][0] = 1;

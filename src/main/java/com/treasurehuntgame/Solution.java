@@ -9,12 +9,12 @@ import javax.swing.JFrame;
 /**
  * @author Vinh
  */
-public class DapAn extends JFrame implements Runnable {
+public class Solution extends JFrame implements Runnable {
     public int diem, count;
     Game g;
     int[] temp = new int[255];
 
-    public DapAn(Game gg) {
+    public Solution(Game gg) {
         this.g = gg;
         setSize(700, 700);
         setLocationRelativeTo(null);
@@ -24,13 +24,13 @@ public class DapAn extends JFrame implements Runnable {
                 if (g.gt.a[i][j] == -1000000) {
                     g.A[i][j].setText("");
                     g.A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/boom.PNG")));
-                } else if (g.gt.a[i][j] == -500) {
+                } else if (g.gt.a[i][j] == -150) {
                     g.A[i][j].setText("");
                     g.A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/khunglong.PNG")));
-                } else if (g.gt.a[i][j] == -300) {
+                } else if (g.gt.a[i][j] == -100) {
                     g.A[i][j].setText("");
                     g.A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/ho.PNG")));
-                } else if (g.gt.a[i][j] == -100) {
+                } else if (g.gt.a[i][j] == -70) {
                     g.A[i][j].setText("");
                     g.A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/chosoi.PNG")));
                 }
@@ -50,7 +50,7 @@ public class DapAn extends JFrame implements Runnable {
             try {
                 sleep(250);
             } catch (InterruptedException ex) {
-                Logger.getLogger(DapAn.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Solution.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }

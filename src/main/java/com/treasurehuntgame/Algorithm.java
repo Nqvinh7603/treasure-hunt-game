@@ -6,7 +6,7 @@ import java.util.Random;
  *
  * @author Vinh
  */
-public class GiaiThuat {
+public class Algorithm {
 
     public int a[][] = new int[15][15];
 
@@ -16,10 +16,17 @@ public class GiaiThuat {
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 15; j++) {
                 a[i][j] = -r.nextInt(50) - 1;
-                if (a[i][j] == -100 || a[i][j] == -300 && a[i][j] == -500) {
+                if (a[i][j] == -70 || a[i][j] == -100 && a[i][j] == -150) {
                     a[i][j]++;
                 }
             }
+        }
+        for (int i = 0; i < n; i++) {
+            t = r.nextInt(223) + 1;
+            while (a[t / 15][t % 15] > 0) {
+                t = r.nextInt(223) + 1;
+            }
+            a[t / 15][t % 15] = 70;
         }
         for (int i = 0; i < n; i++) {
             t = r.nextInt(223) + 1;
@@ -33,14 +40,7 @@ public class GiaiThuat {
             while (a[t / 15][t % 15] > 0) {
                 t = r.nextInt(223) + 1;
             }
-            a[t / 15][t % 15] = 300;
-        }
-        for (int i = 0; i < n; i++) {
-            t = r.nextInt(223) + 1;
-            while (a[t / 15][t % 15] > 0) {
-                t = r.nextInt(223) + 1;
-            }
-            a[t / 15][t % 15] = 500;
+            a[t / 15][t % 15] = 150;
         }
         for (int i = 0; i < n; i++) {
             t = r.nextInt(223) + 1;
@@ -52,7 +52,7 @@ public class GiaiThuat {
 
     }
 
-    public GiaiThuat(int n) {
+    public Algorithm(int n) {
         taoMang(n);
         a[0][0] = 0;
         a[14][14] = 0;
@@ -127,9 +127,7 @@ public class GiaiThuat {
             if (u == -1 || u == n) {
                 break;
             }
-
             DanhDau[u] = 1;
-
             for (int v = 0; v <= n; v++) {
                 if (Nhan[v] > A[u][v] + Nhan[u] && DanhDau[v] == 0) {
                     Nhan[v] = A[u][v] + Nhan[u];

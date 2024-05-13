@@ -1,16 +1,9 @@
 package com.treasurehuntgame;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -19,12 +12,10 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 
@@ -35,22 +26,22 @@ import javax.swing.JTextField;
 public class FrameScreen extends javax.swing.JFrame implements Serializable {
 
     public Game game, game2;
-    public MaTran A, B;
+    public Matrix A, B;
     public int diem1, diem2;
     public JProgressBar nangluong;
     public JProgressBar nangluong2;
-    public GiaiThuat gt;
+    public Algorithm gt;
     static Menu menu;
-    Luu luu;
+    Save save;
     boolean daThang1 = false, daThang2 = false, daThua1 = false, daThua2 = false;
     public int diemtoiuu;
-    TenThang thang1, thang2;
+    Winner thang1, thang2;
     int mucchoi;
 
-    public FrameScreen(int thamso_n, int choiTiep, Luu ff) {
+    public FrameScreen(int thamso_n, int choiTiep, Save ff) {
 
         setIconImage(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/nengame.PNG")).getImage());
-        gt = new GiaiThuat(thamso_n);
+        gt = new Algorithm(thamso_n);
         mucchoi = thamso_n / 5;
         if (choiTiep == 1) {
             for (int i = 0; i < 15; i++) {
@@ -60,7 +51,7 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable {
             }
         }
 
-        luu = new Luu();
+        save = new Save();
         setTitle("Treasure Hunt Game");
         setSize(1370, 730);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -68,8 +59,8 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable {
         game = new Game(gt);
         game2 = new Game(gt);
 
-        A = new MaTran();
-        B = new MaTran();
+        A = new Matrix();
+        B = new Matrix();
         Control control = new Control(this);
         this.addKeyListener(control);
 
@@ -113,11 +104,11 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable {
 
                 }
 
-                luu.mucChoi = thamso_n / 5;
+                save.mucChoi = thamso_n / 5;
                 mucchoi = thamso_n / 5;
                 luuTrangThai();
                 try {
-                    o.writeObject(luu);
+                    o.writeObject(save);
                 } catch (IOException ex) {
 
                 }
@@ -139,7 +130,7 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable {
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 Game gg = new Game(game);
-                DapAn da = new DapAn(gg);
+                Solution da = new Solution(gg);
                 //da.add(gg);
                 da.setVisible(true);
 
@@ -151,7 +142,7 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable {
 
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 15; j++) {
-                luu.value[i][j] = gt.a[i][j];
+                save.value[i][j] = gt.a[i][j];
                 if (gt.a[i][j] > 0) {
                     gt.a[i][j] = -gt.a[i][j];
                 }
@@ -369,27 +360,27 @@ public class FrameScreen extends javax.swing.JFrame implements Serializable {
 
     public void luuTrangThai() {
 
-        luu.xA = A.x;
-        luu.yA = A.y;
-        luu.xB = B.x;
-        luu.yB = B.y;
-        luu.diem1 = diem1;
-        luu.diem2 = diem2;
-        luu.nlA = nangluong.getString();
-        luu.nlB = nangluong2.getString();
-        luu.daThang1 = this.daThang1;
-        luu.daThang2 = this.daThang2;
-        luu.daThua1 = this.daThua1;
-        luu.daThua2 = this.daThua2;
+        save.xA = A.x;
+        save.yA = A.y;
+        save.xB = B.x;
+        save.yB = B.y;
+        save.diem1 = diem1;
+        save.diem2 = diem2;
+        save.nlA = nangluong.getString();
+        save.nlB = nangluong2.getString();
+        save.daThang1 = this.daThang1;
+        save.daThang2 = this.daThang2;
+        save.daThua1 = this.daThua1;
+        save.daThua2 = this.daThua2;
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 15; j++) {
-                luu.goneA[i][j] = A.T[i][j];
-                luu.goneB[i][j] = B.T[i][j];
+                save.goneA[i][j] = A.T[i][j];
+                save.goneB[i][j] = B.T[i][j];
             }
         }
     }
 
-    public void tiepTuc(Luu lu) {
+    public void tiepTuc(Save lu) {
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 15; j++) {
                 game.remove(game.A[i][j]);

@@ -3,19 +3,13 @@ package com.treasurehuntgame;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.Image;
+
 import static java.lang.Thread.sleep;
-import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.border.Border;
 
 /**
  *
@@ -23,15 +17,15 @@ import javax.swing.border.Border;
  */
 public class Game extends JPanel {
 
-    public GiaiThuat gt;
+    public Algorithm gt;
     JLabel[][] A = new JLabel[15][15];
 
-    public Game(GiaiThuat thamso) {
+    public Game(Algorithm thamso) {
         gt = thamso;
     }
 
     public Game(Game d) {
-        gt = new GiaiThuat(0);
+        gt = new Algorithm(0);
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 15; j++) {
                 gt.a[i][j] = d.gt.a[i][j];
@@ -69,11 +63,11 @@ public class Game extends JPanel {
 
                 if (gt.a[i][j] == 1000000) {
                     A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/boom.PNG")));
-                } else if (gt.a[i][j] == 500) {
+                } else if (gt.a[i][j] == 150) {
                     A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/khunglong.PNG")));
-                } else if (gt.a[i][j] == 300) {
-                    A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/ho.PNG")));
                 } else if (gt.a[i][j] == 100) {
+                    A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/ho.PNG")));
+                } else if (gt.a[i][j] == 70) {
                     A[i][j].setIcon(new ImageIcon(getClass().getResource("/com/treasurehuntgame/img/chosoi.PNG")));
                 } else {
                     A[i][j].setText(String.valueOf(gt.a[i][j]));
